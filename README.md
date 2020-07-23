@@ -8,8 +8,6 @@ ENI | Le développement Web côté serveur – BackEnd avec Java Enterprise Edit
 
 ### Énoncés (par l'ENI)
 
-<summary>Version 1</summary>  
-
 A partir d'un nouveau Dynamic Web Project, créer l'application suivante.
 
 #### Description fonctionnelle
