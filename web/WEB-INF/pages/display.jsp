@@ -69,9 +69,7 @@
 				<%} else { %>
 					<p>Il n'y a aucun repas à afficher<P>
 				<% } %>
-	
-			
-			
+
 		</table>
 	
 		<a href="<%=request.getContextPath()%>/ServletAddRepas"><input type="button" value="Ajouter un nouveau repas"/></a>

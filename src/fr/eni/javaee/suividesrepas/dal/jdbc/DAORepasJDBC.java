@@ -16,13 +16,13 @@ public class DAORepasJDBC implements DAO<Repas> {
     private static final String SELECT_BY_DATE =
             "SELECT REPAS.id, date_repas, heure_repas, ALIMENTS.id, nom " +
                     "FROM REPAS " +
-                    "INNER JOIN ALIMENTS ON REPAS.id = ALIMENTS.id " +
+                    "INNER JOIN ALIMENTS ON REPAS.id = ALIMENTS.id_repas " +
                     "WHERE date_repas = ? " +
                     "ORDER BY REPAS.heure_repas DESC";
     private static final String SELECT_ALL =
             "SELECT REPAS.id, date_repas, heure_repas, ALIMENTS.id, nom " +
                     "FROM REPAS " +
-                    "INNER JOIN ALIMENTS ON REPAS.id = ALIMENTS.id " +
+                    "INNER JOIN ALIMENTS ON REPAS.id = ALIMENTS.id_repas " +
                     "ORDER BY REPAS.date_repas DESC, REPAS.heure_repas DESC";
     private static final String INSERT_REPAS =
             "INSERT INTO REPAS(date_repas, heure_repas) " +
@@ -66,15 +66,19 @@ public class DAORepasJDBC implements DAO<Repas> {
             ResultSet resultSet = statement.executeQuery();
             Repas repas = null;
             Aliment aliment = null;
+            int identifiant;
             while(resultSet.next()) {
-                int identifiant = resultSet.getInt(1);
+                identifiant = resultSet.getInt(1);
                 if (repas == null || identifiant != repas.getIdentifiant()) {
-                    if (repas != null) { listeRepas.add(repas); }
+                    if (repas != null) {
+                        listeRepas.add(repas);
+                    }
                     repas = getRepas(resultSet, identifiant);
                 }
                 aliment = getAliment(resultSet);
                 repas.getAliments().add(aliment);
             }
+            listeRepas.add(repas);
             resultSet.close();
             statement.close();
         } catch (Exception exception) {
