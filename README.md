@@ -1,43 +1,36 @@
 # Suivi des repas
 
-## A propos de ce projet
+A meal tracking web application built with Java EE, developed as an ENI course project.
 
-### Cursus
-ENI | Le développement Web côté serveur – BackEnd avec Java Enterprise Edition (JEE)  
-~ [Module 4 - L’accès aux données](https://github.com/Dyrits/SUIVI-DES-REPAS/blob/master/Module%2004%20-%20Enonc%C3%A9%20TP%2001%20-%20Suivi%20des%20repas.pdf)  
+## About The Project
 
-### Énoncés (par l'ENI)
+The application lets a user record meals over the days for later consultation. A form allows adding a new meal with three fields: a date, a time, and the foods (entered in a single field, separated by commas, processed server-side). Another view lists the recorded meals in chronological order, from most recent to oldest, using a single SQL query.
 
-A partir d'un nouveau Dynamic Web Project, créer l'application suivante.
+The database is made of two tables: REPAS, storing the date and time of each meal, and ALIMENTS, storing the name of each food (one record per food per meal).
 
-#### Description fonctionnelle
+The original assignment (in French) is available in the repository: [Module 04 - Enoncé TP 01 - Suivi des repas.pdf](Module%2004%20-%20Enonc%C3%A9%20TP%2001%20-%20Suivi%20des%20repas.pdf).
 
-L'application doit permettre à un utilisateur d'enregistrer ses repas au fil des jours dans un but de consultation.
+### Course
 
-#### Eléments d'architecture
+ENI | Le développement Web côté serveur - BackEnd avec Java Enterprise Edition (JEE)
+Module 4 - L'accès aux données
 
-L'application se nomme TPSuiviDesRepas.
+### Built With
 
-Mettre en œuvre une architecture correspondant à celle présentée en cours.
-- La base de données est composée de deux tables : une table REPAS pour stocker la date et l'heure du repas. Une table ALIMENTS pour enregistrer le nom des aliments (un enregistrement par aliment par repas).
-- Un formulaire de saisie permet l'ajout d'un nouveau repas. Ce formulaire est composé de trois champs. Un champ pour la date, un champ pour l'heure et un dernier champ pour les aliments. Les aliments sont saisis dans une seule zone. La virgule sert de séparateur. Charge à vous de faire le traitement nécessaire côté serveur.
-- Un formulaire permet d'afficher les repas déjà saisis par ordre chronologique du plus récent au plus ancien. Une seule requête SQL doit permettre de sélectionner les informations à afficher.
-- Proposition de maquette :
-
-> Plus de détails au sein du fichier PDF correspondant.
-
-### Technologies principales
 - Java
 - Java EE
 
-### Détails | Commentaires
-Ce projet a été construit à partir de zéro en suivant des instructions spécifiques. Différents éléments ont été construits en s'inspirant d'un corrigé proposé.
+## Notes
 
-L'application a été renommée "Suivi des repas".
+The following notes are from the original README (translated from French):
 
-### Statut
-Terminée  (V1.0)
+- This project was built from scratch following specific instructions. Some elements were built inspired by a provided correction.
+- The application was renamed "Suivi des repas".
 
-#### Dernière mise à jour
-23/07/2020  
-(README | 23/07/2020)
+## Status
+
+Completed (V1.0, per the original README).
+
+## License
+
+No license file is present in this repository.
